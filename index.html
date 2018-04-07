@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Books on Foogle Play</title>
+
+  <meta http-equiv="X-UA-Compatable" content = "IE=Edge" />
+
+  <link rel="stylesheet" href = "http://meyerweb.com/eric/tools/css/reset/reset.css">
+  <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css">
+  <link href="https://fonts.googleapis.com/css?family=Stoke:300|Roboto:400,300" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+
+</head>
+<body>
+
+<header>
+  <div class = "l-pad">
+    <span class = "logo">
+      <h1>Foogle <span class="logo-sub"> play </span> </h1>
+  </div>
+
+  <div class = "topbar cf">
+    <span class = "topbar-title l-sidebar l-pad">
+      <i class="fa fa-book"></i>
+      <h2>Books</h2>
+    </span>
+  </div>
+
+  <div>
+  </div>
+</header>
+
+<div class = "categories l-sidebar standout">
+  <ul>
+    <li><a href="#category/all">All</a></li>
+    <li><a href="#category/scifi">Science Fiction</a></li>
+    <li><a href="#category/romance">Romance</a></li>
+    <li><a href="#category/horror">Horror</a></li>
+    <li><a href="#category/sport">Sports</a></li>
+  </ul>
+</div>
+
+<div class="books-wrapper" data-id = "books-wrapper">
+  <div class = "books l-content l-content-constrained" data-id="books-list">
+    <ul>
+      <li class="thumb">
+        <a class = "thumb-link" href = "#">
+          <span class="overlay"></span>
+          <img src = "http://books.google.co.uk/books?id=_tyFxRRpY6YC&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE72ebMqxjoxwWtUWxsbrxyqIkbjakDiT_PB3Rh40KO96BezU0av5_KnLcXWvwzIBSPXQxZX6BixdNR67V_R9TSQysX7zB_r2sZfNqEhGPLeL6bqHTSY&source=gbs_api">
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class = "book l-content is-visible">
+    <header class = "book-header l-content l-content-constrained l-row">
+      <div class = "l-column thumb-image">
+        <img src = "http://books.google.co.uk/books?id=_tyFxRRpY6YC&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE71jLXfZ52TbMhSu7ZWYx4RqR5DPBgqzanw3fVWN2TirVEdetr9xBp3KjuFQ5N3YJ1n_d7DB47YDPiHYSUXIGUTVQWkQPUiE9OyYcRWVZZSSwYqQUnc&source=gbs_api">
+      </div>
+
+      <div class = "l-column l-pad">
+        <div class: "title">Doing Sport Psychology</div>
+        <em>Mark B. Andersen</em> 2000 <br>
+        Human Kinetics - publisher
+      </div>
+    </header>
+
+    <div class = "book-content l-content l-content-constrained standout">
+        <h1 class = "title"> Description </h1>
+        <p> Many sport psychology texts focus on what to do — relaxation, imagery, etc. This is the first text to focus directly on the how of doing sport psychology.\u003c/p\u003e\u003cp\u003e\u003ci\u003eDoing Sport Psychology\u003c/i\u003einvolves much more than the standard techniques such as goal setting and positive self-talk. Counselors' personalities, the history of their relationships with athletes, the interaction of individual psychologists and athletes with entire teams—these factors are at least as important as the application of standard procedures. This book reveals in intimate detail the process of sport psychology at work.\u003c/p\u003e\u003cp\u003eThe text, edited by psychologist Mark B. Andersen, includes\u003cbr\u003e-details of sessions directed by professionals using a variety of models: cognitive-behavioral, rational-emotive, performance enhancement, developmental, and psychodynamic;\u003c/p\u003e\u003cp\u003e-transcripts of dialogue between counselors and athletes in many different sports, which clearly demonstrate what sport psychology sessions actually sound like;
+        </p>
+    </div>
+  </div>
+
+</div>
+<script src ="js/bootstrap.js"></script>
+<script src ="js/routers/Router.js"></script>
+<script src ="js/models/books.js"></script>
+<script src ="js/views/BooksList.js"></script>
+
+<script src ="js/main.js"></script>
+</body>
+</html>
