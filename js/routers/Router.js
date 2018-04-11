@@ -1,6 +1,6 @@
 app.routers.Router = Backbone.Router.extend({
   routes: {
-    'category/:id/book/:bookID': 'book',
+    'category/:id/book/:bookId': 'book',
     'category/:id': 'category',
     '': 'home',
     '*default': 'unknown'
@@ -11,9 +11,9 @@ app.routers.Router = Backbone.Router.extend({
   },
 
 category: function(id) {
-  console.log("category" + id);
+  console.log("category " + id);
 
-  app.data.books = new app.models.Books(null, {catID: id});
+  app.data.books = new app.models.Books(null, {catId: id});
   console.log(app.data.books.url());
 
   this._cleanupCurrentView();
@@ -27,8 +27,20 @@ category: function(id) {
   app.data.books.fetch({reset:true});
 },
 
-book: function(id, bookID) {
-  console.log("book" + bookID + " for category" + id);
+book: function(id, bookId) {
+  console.log("book" + bookId + " for category" + id);
+
+  app.data.book = new app.models.Book({id: bookId});
+
+  this._cleanupCurrentView();
+  app.data.currentView = new app.views.BookDetail({
+    model: app.data.book
+  });
+
+  this._activateBookDetailPanel();
+  $('[data-id=book]').empty().append(app.data.currentView.$el);
+
+  app.data.book.fetch();
 },
 
 unknown: function() {
@@ -36,18 +48,18 @@ unknown: function() {
 },
 
 
-_activateBooksListPanel: function(selector) {
-  $('[data-id = "books-wrapper"] .is-visible').removeClass('is-visible')
+_activateBooksListPanel: function() {
+  $('[data-id="books-wrapper"] .is-visible').removeClass('is-visible');
   $('[data-id=books-list]').addClass('is-visible');
 },
 
-_activateBookDetailPanel: function(selector) {
-  $('[data-id = "books-wrapper"] .is-visible').removeClass('is-visible')
+_activateBookDetailPanel: function() {
+  $('[data-id="books-wrapper"] .is-visible').removeClass('is-visible');
   $('[data-id=book]').addClass('is-visible');
 },
 
 _cleanupCurrentView: function() {
-  if (app.data.currentView) {
+  if(app.data.currentView) {
     app.data.currentView.remove();
     app.data.currentView = null;
   }
