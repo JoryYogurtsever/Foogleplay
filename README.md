@@ -1,4 +1,5 @@
-## foogleplay - an inavative online bookstore *(Our books are not for sale)*
+# Foogleplay
+###  An inavative online bookstore *(Our books are not for sale)*
 
 This project was the second and final project in my course on front end development
 This project was meant to duplicate a similar website both in style and functionality.
